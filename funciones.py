@@ -667,11 +667,14 @@ def promedio(db):
   boletos = 0
   for key, boleto in db['boletos_vip'].items():
     suma += boleto.get_costo()
-    boletos += 1
+    boletos += 1 
+	if boletos == 0:
+        print("No hubo ventas de clientes vip")
+    else:
+     promedio = suma/boletos
+     return promedio
 
-  promedio = suma/boletos
 
-  return promedio
 
 def tabla_asistencia(db):
   asistencias = {}
